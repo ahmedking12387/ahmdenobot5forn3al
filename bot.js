@@ -265,7 +265,7 @@ client.user.setGame(args , '');
 client.on("message", async message => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
-    let prefix = "1";
+    let prefix = "join";
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
 
