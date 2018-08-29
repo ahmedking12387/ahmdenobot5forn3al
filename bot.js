@@ -292,7 +292,204 @@ if (command === `${prefix}join`) {
 
 
 
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+    let pages = [`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:earth_africa: **الاوامر العامة** :earth_africa:
+
+1-  +id     | ل اضهار معلوماتك في السيرفر
+2-  +stats  | ل اضهار حالت البوت
+3-  +invites| لمعرفة عدد دعواتك بالسيرفر
+-4  لأخذ قائمة الالوان |  الوان
+-5  لتفير لونك بالسيرفر  |   الون
+6- +server | معلومات السيرفر
+
+اذا تبي رابط اكتب ب الشات
+(رابط)
+
+اذا نشرت اي رابط دسكورد رح تاخذ ميوت تلقائي
 
 
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+▶ ل التوجة الى أوامر الادارة اضغط
+   `
+,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+ :spy::skin-tone-1:  آوامر الادارة :spy::skin-tone-1:
+
+
+1-  لمسح الشات |           مسح
+2-    لقفل الشات | اقفل الشات
+3-  لحظر العضو من السيرفر |           بان
+4- +bc            |  لارسال رسالة جماعية لجميع الاعضاء
+5- لسحب جميع الاعضاء |      سحب الكل
+6-  ل اسكات العضو |         اسكت
+-7 
+ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+▶ ل التوجة الى أوامر الاغاني اضغط
+   `,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+**:notes: آوامر بوتات الاغاني  :notes:**
+
+1play ⇏ لتشغيل أغنية برآبط أو بأسم
+1skip ⇏ لتجآوز الأغنية الحآلية
+1pause ⇏ إيقآف الأغنية مؤقتا
+1resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+1vol ⇏ لتغيير درجة الصوت 50 - 0
+1stop ⇏ لإخرآج البوت من الروم
+1np ⇏ لمعرفة الأغنية المشغلة حآليا
+1queue ⇏ لمعرفة قآئمة التشغيل
+
+
+طبعا كل بوت له علامه علامات البوتات من 1 الى 8
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+   `]
+    let page = 1;
+
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+    .setDescription(pages[page-1])
+
+    message.author.sendEmbed(embed).then(msg => {
+
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
+
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+
+
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        })
+    })
+    }
+});
+
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+    let pages = [`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:earth_africa: **الاوامر العامة** :earth_africa:
+
+1-  +id     | ل اضهار معلوماتك في السيرفر
+2-  +stats  | ل اضهار حالت البوت
+3-  +invites| لمعرفة عدد دعواتك بالسيرفر
+-4  لأخذ قائمة الالوان |  الوان
+-5  لتفير لونك بالسيرفر  |   الون
+6- +server | معلومات السيرفر
+
+اذا تبي رابط اكتب ب الشات
+(رابط)
+
+اذا نشرت اي رابط دسكورد رح تاخذ ميوت تلقائي
+
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+▶ ل التوجة الى أوامر الادارة اضغط
+   `
+,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+ :spy::skin-tone-1:  آوامر الادارة :spy::skin-tone-1:
+
+
+1-  لمسح الشات |           مسح
+2-    لقفل الشات | اقفل الشات
+3-  لحظر العضو من السيرفر |           بان
+4- +bc            |  لارسال رسالة جماعية لجميع الاعضاء
+5- لسحب جميع الاعضاء |      سحب الكل
+6-  ل اسكات العضو |         اسكت
+-7 
+ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+
+
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+▶ ل التوجة الى أوامر الاغاني اضغط
+   `,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+**:notes: آوامر بوتات الاغاني  :notes:**
+
+1play ⇏ لتشغيل أغنية برآبط أو بأسم
+1skip ⇏ لتجآوز الأغنية الحآلية
+1pause ⇏ إيقآف الأغنية مؤقتا
+1resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+1vol ⇏ لتغيير درجة الصوت 50 - 0
+1stop ⇏ لإخرآج البوت من الروم
+1np ⇏ لمعرفة الأغنية المشغلة حآليا
+1queue ⇏ لمعرفة قآئمة التشغيل
+
+
+طبعا كل بوت له علامه علامات البوتات من 1 الى 8
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
+   `]
+    let page = 1;
+
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+    .setDescription(pages[page-1])
+
+    message.author.sendEmbed(embed).then(msg => {
+
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
+
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+
+
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        })
+    })
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
