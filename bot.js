@@ -27,17 +27,6 @@ client.on('ready', () => {
 });
 
 
-client.on('message', message => {
-  if(message.content.startsWith(`${prefix}invites`)) {
-    message.guild.fetchInvites().then(invs => {
-      let user = message.mentions.users.first() || message.author
-      let personalInvites = invs.filter(i => i.inviter.id === user.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-message.channel.send(`${user} has ${inviteCount} invites.`);
-});
-  }
-});
-
 
 client.on('message', function(message) {
 	const myID = "279194403564814336";
@@ -295,7 +284,7 @@ if (command === `${prefix}join`) {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
 :earth_africa: **الاوامر العامة** :earth_africa:
 
 1-  +id     | ل اضهار معلوماتك في السيرفر
@@ -311,30 +300,27 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 اذا نشرت اي رابط دسكورد رح تاخذ ميوت تلقائي
 
 
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
 ▶ ل التوجة الى أوامر الادارة اضغط
    `
 ,`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
  :spy::skin-tone-1:  آوامر الادارة :spy::skin-tone-1:
 
 
 1-  لمسح الشات |           مسح
 2-    لقفل الشات | اقفل الشات
 3-  لحظر العضو من السيرفر |           بان
-4- +bc            |  لارسال رسالة جماعية لجميع الاعضاء
-5- لسحب جميع الاعضاء |      سحب الكل
+4-  +bc            |  لارسال رسالة جماعية لجميع الاعضاء
+5-  لسحب جميع الاعضاء |     سحب الكل
 6-  ل اسكات العضو |         اسكت
--7 
-ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+-7 ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+2-    لفتح الشات | افتح الشات
 
-
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
 ▶ ل التوجة الى أوامر الاغاني اضغط
    `,`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
 **:notes: آوامر بوتات الاغاني  :notes:**
 
 1play ⇏ لتشغيل أغنية برآبط أو بأسم
@@ -348,7 +334,6 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 
 
 طبعا كل بوت له علامه علامات البوتات من 1 الى 8
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
    `]
     let page = 1;
