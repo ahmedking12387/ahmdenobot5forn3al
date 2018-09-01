@@ -280,9 +280,18 @@ if (command === `${prefix}join`) {
 
 
 
+  client.on('message', async message => {
+if(message.author.bot) return;
+if (message.channel.guild) {
+    if(message.content.startsWith(prefix + "help")) {
+message.author.send(``).catch(RebeL =>{console.log('`Error`: ' + RebeL);
+message.channel.send("**للأسف , لديك اعدادات خصوصية لاتسمح لي بأرسال رسائل خاصة لك **")
+});
+}}});
+
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
 
 :earth_africa: **الاوامر العامة** :earth_africa:
@@ -378,9 +387,9 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 });
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
 :earth_africa: **الاوامر العامة** :earth_africa:
 
 1-  +id     | ل اضهار معلوماتك في السيرفر
@@ -396,30 +405,27 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 اذا نشرت اي رابط دسكورد رح تاخذ ميوت تلقائي
 
 
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
 ▶ ل التوجة الى أوامر الادارة اضغط
    `
 ,`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
  :spy::skin-tone-1:  آوامر الادارة :spy::skin-tone-1:
 
 
 1-  لمسح الشات |           مسح
 2-    لقفل الشات | اقفل الشات
 3-  لحظر العضو من السيرفر |           بان
-4- +bc            |  لارسال رسالة جماعية لجميع الاعضاء
-5- لسحب جميع الاعضاء |      سحب الكل
+4-  +bc            |  لارسال رسالة جماعية لجميع الاعضاء
+5-  لسحب جميع الاعضاء |     سحب الكل
 6-  ل اسكات العضو |         اسكت
--7 
-ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+-7 ل اعطاء العضو رتبه , ملاحظة :لازم تكتب اسم الرتبه صح|         صلاحية
+2-    لفتح الشات | افتح الشات
 
-
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
 ▶ ل التوجة الى أوامر الاغاني اضغط
    `,`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+
 **:notes: آوامر بوتات الاغاني  :notes:**
 
 1play ⇏ لتشغيل أغنية برآبط أو بأسم
@@ -433,7 +439,6 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 
 
 طبعا كل بوت له علامه علامات البوتات من 1 الى 8
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 
    `]
     let page = 1;
