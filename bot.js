@@ -27,7 +27,6 @@ client.on('ready', () => {
 });
 
 
-
 client.on('message', function(message) {
 	const myID = "279194403564814336";
     let args = message.content.split(" ").slice(1).join(" ");
