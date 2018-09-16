@@ -484,6 +484,7 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 
 
 
+
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
         if (message.author.id === client.user.id) return;
@@ -497,5 +498,6 @@ client.on('message', function(message) {
         client.channels.get("490942592301662218").send({ embed: stewart });
     }
 });
+
 
 client.login(process.env.BOT_TOKEN);
