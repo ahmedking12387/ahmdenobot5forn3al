@@ -89,6 +89,8 @@ client.on('message', async message => {
         message.guild.channels.forEach(c => {
           c.overwritePermissions(r , {
             SEND_MESSAGES: false,
+            SPEAK: false,
+	    MUTE_MEMBERS: true,  
             READ_MESSAGES_HISTORY: false,
             ADD_REACTIONS: false
           });
