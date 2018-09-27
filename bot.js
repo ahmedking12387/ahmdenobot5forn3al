@@ -255,6 +255,7 @@ client.user.setGame(args , '');
         });
     }
 });
+
 client.on('message', message => {
 	               if(!message.channel.guild) return message.reply('');
 if (message.author.bot) return;
@@ -283,76 +284,6 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ان�
 
 });
 
-
-client.on('message', message => {
-if(!message.channel.guild) return message.reply('');
-  if(message.author.bot) return;
-
-	
-  if(message.channel.id == '475999824525656064') return;
-  if(message.channel.id == '476877117452320778') return;
-  if(message.channel.id == '477358506648010752') return;
-  if(message.channel.id == '477358582397009921') return;
-  if(message.channel.id == '482123244602654721') return;
-  if(message.channel.id == '477093131263672320') return;
-  if(message.channel.id == '477340217188155392') return;
-  if(message.channel.id == '476876831241535488') return;
-  if(message.channel.id == '476876876519047169') return;
-  if(message.channel.id == '489881423860203540') return;
-  if(message.channel.id == '489881395850641408') return;
-  if(message.channel.id == '490468086672261131') return;
-  if(message.channel.id == '489882490987872266') return;
-  if(message.channel.id == '490942592301662218') return;  
-  if(message.channel.id == '491218114437185536') return;
-  if(message.channel.id == '492825067701665823') return;
-	            
-if (message.author.bot) return;
-    if (message.content === "اقفل جميع الشاتات") {
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' انت لاتمتلك الصلاحبات الازمة لهذا الامر');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: false
-
-           }).then(() => {
-               message.reply("تم قفل الشات بنجاح  ✅ ")
-           });
-             }
-if (message.content === "افتح جميع الشاتات") {
-
-if(!message.channel.guild) return message.reply('');
-  if(message.author.bot) return;
-
-	
-  if(message.channel.id == '475999824525656064') return;
-  if(message.channel.id == '476877117452320778') return;
-  if(message.channel.id == '477358506648010752') return;
-  if(message.channel.id == '477358582397009921') return;
-  if(message.channel.id == '482123244602654721') return;
-  if(message.channel.id == '477093131263672320') return;
-  if(message.channel.id == '477340217188155392') return;
-  if(message.channel.id == '476876831241535488') return;
-  if(message.channel.id == '476876876519047169') return;
-  if(message.channel.id == '489881423860203540') return;
-  if(message.channel.id == '489881395850641408') return;
-  if(message.channel.id == '490468086672261131') return;
-  if(message.channel.id == '489882490987872266') return;
-  if(message.channel.id == '490942592301662218') return;  
-  if(message.channel.id == '491218114437185536') return;
-  if(message.channel.id == '492825067701665823') return;
-   
- if(!message.channel.guild) return message.reply(' This command only for servers');
-
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('انت لاتمتلك الصلاحبات الازمة لهذا الامر');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: true
-
-           }).then(() => {
-               message.reply("تم فتح الشات بنجاح✅")
-           });
-             }
-
-
-
-});
 
 
 
